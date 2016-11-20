@@ -9,18 +9,18 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 const core_1 = require('@angular/core');
-const platform_browser_1 = require('@angular/platform-browser');
-const app_component_1 = require('./app.component');
-const login_component_1 = require('./login.component');
-let AppModule = class AppModule {
+let FeatureComponent = class FeatureComponent {
+    constructor() {
+    }
+    ngOnInit() { }
 };
-AppModule = __decorate([
-    core_1.NgModule({
-        imports: [platform_browser_1.BrowserModule],
-        declarations: [app_component_1.AppComponent, login_component_1.LoginComponent],
-        bootstrap: [app_component_1.AppComponent]
+FeatureComponent = __decorate([
+    core_1.Component({
+        moduleId: module.id,
+        selector: 'login',
+        template: ''
     }), 
     __metadata('design:paramtypes', [])
-], AppModule);
-exports.AppModule = AppModule;
-//# sourceMappingURL=app.module.js.map
+], FeatureComponent);
+exports.FeatureComponent = FeatureComponent;
+//# sourceMappingURL=login.js.map
