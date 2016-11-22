@@ -9,19 +9,28 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 const core_1 = require('@angular/core');
-const platform_browser_1 = require('@angular/platform-browser');
-const app_component_1 = require('./app.component');
-const login_component_1 = require('../src/login.component');
-const app_routing_module_1 = require('./app.routing.module');
-let AppModule = class AppModule {
+let LoginComponent = class LoginComponent {
+    constructor() {
+    }
+    ngOnInit() {
+        this.loadData('<h1>Testing</h1>');
+    }
+    loadData(data) {
+        // this.dataContainer.nativeElement.innerHTML = data;
+        console.log(data);
+    }
 };
-AppModule = __decorate([
-    core_1.NgModule({
-        imports: [platform_browser_1.BrowserModule, app_routing_module_1.AppRoutingModule],
-        declarations: [app_component_1.AppComponent, login_component_1.LoginComponent],
-        bootstrap: [app_component_1.AppComponent]
+__decorate([
+    core_1.ViewChild('dataContainer'), 
+    __metadata('design:type', core_1.ElementRef)
+], LoginComponent.prototype, "dataContainer", void 0);
+LoginComponent = __decorate([
+    core_1.Component({
+        moduleId: module.id,
+        selector: 'login',
+        templateUrl: 'login.component.html'
     }), 
     __metadata('design:paramtypes', [])
-], AppModule);
-exports.AppModule = AppModule;
-//# sourceMappingURL=app.module.js.map
+], LoginComponent);
+exports.LoginComponent = LoginComponent;
+//# sourceMappingURL=login.component.js.map

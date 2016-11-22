@@ -3,8 +3,8 @@ import { Component, OnInit,ViewChild, ElementRef } from '@angular/core';
 @Component({
     moduleId: module.id,
     selector: 'login',
-    //templateUrl: 'login.component.html'
-    template:'<div #dataContainer></div>'
+    templateUrl: 'login.component.html' 
+    //template:'<div #dataContainer></div>'
 })
 
 
@@ -16,7 +16,7 @@ export class LoginComponent implements OnInit {
         this.loadData('<h1>Testing</h1>')
     }
     loadData(data) {
-        this.dataContainer.nativeElement.innerHTML = data;
+       // this.dataContainer.nativeElement.innerHTML = data;
         console.log(data);
     }
 }
