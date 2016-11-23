@@ -1,4 +1,6 @@
 import { Component, OnInit,ViewChild, ElementRef } from '@angular/core';
+import {Router} from '@angular/router';
+//import { Observable } from 'rxjs/Observable';
 
 @Component({
     moduleId: module.id,
@@ -9,7 +11,10 @@ import { Component, OnInit,ViewChild, ElementRef } from '@angular/core';
 
 
 export class LoginComponent implements OnInit {
-    constructor() { }
+     public UserId:string;
+    public Pwd:string;
+
+    constructor(public router:Router) { }
     @ViewChild('dataContainer') dataContainer: ElementRef;
 
     ngOnInit() { 
@@ -17,6 +22,18 @@ export class LoginComponent implements OnInit {
     }
     loadData(data) {
        // this.dataContainer.nativeElement.innerHTML = data;
-        console.log(data);
+       // console.log(data);
+    }
+
+     public Login=()=>{
+        if(this.UserId==="test" && this.Pwd==="test")
+        {
+            localStorage.setItem('currentUser','true');
+            this.router.navigate(['/dashboard']);
+        }
+    }
+
+    public LogOut =()=>{
+        localStorage.removeItem('currentUser');
     }
 }

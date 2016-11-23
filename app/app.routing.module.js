@@ -11,8 +11,12 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 const core_1 = require('@angular/core');
 const router_1 = require('@angular/router');
 const login_component_1 = require('../src/login.component');
+const dashboard_component_1 = require('../src/Dashboard/dashboard.component');
+const app_component_1 = require('./app.component');
 const routes = [
+    { path: '', component: app_component_1.AppComponent },
     { path: 'login', component: login_component_1.LoginComponent },
+    { path: 'dashboard', component: dashboard_component_1.DashboardComponent },
 ];
 let AppRoutingModule = class AppRoutingModule {
 };

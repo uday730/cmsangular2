@@ -10,39 +10,24 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 const core_1 = require('@angular/core');
 const router_1 = require('@angular/router');
-//import { Observable } from 'rxjs/Observable';
-let LoginComponent = class LoginComponent {
+let DashboardComponent = class DashboardComponent {
     constructor(router) {
         this.router = router;
-        this.Login = () => {
-            if (this.UserId === "test" && this.Pwd === "test") {
-                localStorage.setItem('currentUser', 'true');
-                this.router.navigate(['/dashboard']);
-            }
-        };
-        this.LogOut = () => {
-            localStorage.removeItem('currentUser');
-        };
     }
     ngOnInit() {
-        this.loadData('<h1>Testing</h1>');
-    }
-    loadData(data) {
-        // this.dataContainer.nativeElement.innerHTML = data;
-        // console.log(data);
+        var user = localStorage.getItem('currentUser');
+        if (user !== 'true') {
+            this.router.navigate(['/login']);
+        }
     }
 };
-__decorate([
-    core_1.ViewChild('dataContainer'), 
-    __metadata('design:type', core_1.ElementRef)
-], LoginComponent.prototype, "dataContainer", void 0);
-LoginComponent = __decorate([
+DashboardComponent = __decorate([
     core_1.Component({
         moduleId: module.id,
-        selector: 'login',
-        templateUrl: 'login.component.html'
+        selector: 'dashboard',
+        templateUrl: 'dashboard.component.html'
     }), 
     __metadata('design:paramtypes', [router_1.Router])
-], LoginComponent);
-exports.LoginComponent = LoginComponent;
-//# sourceMappingURL=login.component.js.map
+], DashboardComponent);
+exports.DashboardComponent = DashboardComponent;
+//# sourceMappingURL=dashboard.component.js.map
